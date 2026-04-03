@@ -1,3 +1,5 @@
+import styles from "./Skills.module.css";
+
 const skillCategories = [
   {
     title: "Front-end",
@@ -37,15 +39,17 @@ export default function Skills() {
       <div className="container py-5">
         <div className="text-center mb-5">
           <h2 className="display-5 fw-bold">Compétences</h2>
-          <div className="mx-auto mt-2" style={{ width: "60px", height: "4px", background: "#0dcaf0", borderRadius: "2px" }}></div>
-          <p className="text-secondary mt-3">Technologies et outils que j'utilise</p>
+          <div className={`mx-auto mt-2 ${styles.sectionDivider}`}></div>
+          <p className="text-secondary mt-3">
+            Technologies et outils que j'utilise
+          </p>
         </div>
         <div className="row g-4">
           {skillCategories.map((category) => (
             <div className="col-lg-4" key={category.title}>
               <div
-                className="card border-0 h-100 text-white p-4"
-                style={{ background: "#1f2937", borderTop: `3px solid ${category.color}` }}
+                className={`card border-0 h-100 text-white p-4 ${styles.card}`}
+                style={{ borderTop: `3px solid ${category.color}` }}
               >
                 <h4 className="fw-bold mb-4" style={{ color: category.color }}>
                   {category.title}
@@ -54,13 +58,18 @@ export default function Skills() {
                   <div className="mb-3" key={skill.name}>
                     <div className="d-flex justify-content-between mb-1">
                       <span className="small">{skill.name}</span>
-                      <span className="small text-secondary">{skill.level}%</span>
+                      <span className="small text-secondary">
+                        {skill.level}%
+                      </span>
                     </div>
-                    <div className="progress" style={{ height: "6px", background: "#374151" }}>
+                    <div className={`progress ${styles.progressBar}`}>
                       <div
                         className="progress-bar"
                         role="progressbar"
-                        style={{ width: `${skill.level}%`, background: category.color }}
+                        style={{
+                          width: `${skill.level}%`,
+                          background: category.color,
+                        }}
                         aria-valuenow={skill.level}
                         aria-valuemin={0}
                         aria-valuemax={100}

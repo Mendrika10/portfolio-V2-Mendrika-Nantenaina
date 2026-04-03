@@ -1,21 +1,21 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Hero from "@/components/accueil/Hero";
+import Services from "@/components/services/Services";
+import Projects from "@/components/projets/Projects";
+import FAQ from "@/components/faq/FAQ";
+import Testimonials from "@/components/temoignages/Testimonials";
+import TechBanner from "@/components/tech-banner/TechBanner";
+import CTA from "@/components/cta/CTA";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
+    <>
       <Hero />
-      <About />
+      <Services />
       <Projects />
-      <Skills />
-      <Contact />
-      <Footer />
-    </main>
+      <Testimonials />
+      <TechBanner />
+      <FAQ />
+      <CTA />
+    </>
   );
 }

@@ -1,25 +1,22 @@
+import styles from "./Hero.module.css";
+
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="d-flex align-items-center justify-content-center text-white text-center"
-      style={{
-        minHeight: "100vh",
-        background: "linear-gradient(135deg, #0f0c29, #302b63, #24243e)",
-      }}
+      className={`d-flex align-items-center justify-content-center text-white text-center ${styles.hero}`}
     >
       <div className="container">
-        <p className="text-uppercase text-info letter-spacing mb-2" style={{ letterSpacing: "4px", fontSize: "0.9rem" }}>
+        <p className={`text-uppercase text-info mb-2 ${styles.subtitle}`}>
           Bonjour, je suis
         </p>
-        <h1 className="display-2 fw-bold mb-3">
-          Nante
-        </h1>
+        <h1 className="display-2 fw-bold mb-3">Nante</h1>
         <h2 className="fs-3 fw-light mb-4 text-secondary">
           Développeur Web Full Stack
         </h2>
-        <p className="lead mb-5 mx-auto" style={{ maxWidth: "600px" }}>
-          Je conçois et développe des applications web modernes, performantes et accessibles.
+        <p className={`lead mb-5 mx-auto ${styles.description}`}>
+          Je conçois et développe des applications web modernes, performantes et
+          accessibles.
         </p>
         <div className="d-flex justify-content-center gap-3 flex-wrap">
           <a href="#projects" className="btn btn-info btn-lg px-4">

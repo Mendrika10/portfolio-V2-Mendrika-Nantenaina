@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -13,10 +14,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-dark fixed-top transition ${
-        scrolled ? "bg-dark shadow" : "bg-transparent"
+      className={`navbar navbar-expand-lg navbar-dark fixed-top ${styles.navbar} ${
+        scrolled ? styles.scrolled : ""
       }`}
-      style={{ transition: "background 0.3s ease" }}
     >
       <div className="container">
         <a className="navbar-brand fw-bold fs-4" href="#hero">
