@@ -24,6 +24,7 @@ const STARS = Array.from({ length: 80 }, (_, i) => ({
 }));
 
 function createShooter(container: HTMLDivElement) {
+  if (!container || !container.isConnected) return;
   const el = document.createElement("span");
   el.className = styles.shooter;
   const startX = Math.random() * 80;
@@ -43,7 +44,7 @@ function createShooter(container: HTMLDivElement) {
   setTimeout(
     () => {
       el.remove();
-      createShooter(container);
+      if (container.isConnected) createShooter(container);
     },
     total + 5000 + Math.random() * 9000,
   );
@@ -91,43 +92,47 @@ const cardVar: Variants = {
 
 const projects = [
   {
-    title: "Plateforme SaaS B2B",
+    title: "JULIA - Plateforme de gestion d'activités et de planning",
     category: "Développement & Design",
-    year: "2025",
-    bg: "linear-gradient(145deg, #0a1628 0%, #0d2040 100%)",
+    year: "2023",
+    bg: "linear-gradient(145deg, #90bcff 0%, #2a79ff 100%)",
     accent: "rgba(0,180,216,0.18)",
-    tag: "SaaS",
-    image: "/images/projects/jtnova.png",
+    href: "/projects/project1",
+    tag: "Application Web",
+    image: "/images/ImagesProjetDetail/Projet1/referent.png",
     frame: "desktop",
   },
   {
-    title: "Boutique E-commerce",
-    category: "Développement & UX",
-    year: "2025",
-    bg: "linear-gradient(145deg, #0f0a20 0%, #1a0a35 100%)",
-    accent: "rgba(160,80,255,0.18)",
-    tag: "E-commerce",
-    image: "/images/projects/vitascore.png",
-    frame: "desktop",
-  },
-  {
-    title: "Dashboard Analytics",
-    category: "Application web",
-    year: "2024",
-    bg: "linear-gradient(145deg, #071520 0%, #0a2030 100%)",
-    accent: "rgba(0,220,180,0.18)",
-    tag: "Dashboard",
-    image: "/images/projects/feonix.png",
-    frame: "desktop",
-  },
-  {
-    title: "Site Vitrine Corporate",
+    title: "Vitascore - Plateforme de création de visuels professionnels",
     category: "Développement & Design",
+    year: "2025",
+    bg: "linear-gradient(145deg, #d82323d4 0%, #c0c0c0 100%)",
+    accent: "rgba(160,80,255,0.18)",
+    href: "/projects/project2",
+    tag: "E-commerce",
+    image: "/images/ImagesProjetDetail/Projet2/vitascore.png",
+    frame: "desktop",
+  },
+  {
+    title: "Feonix IA",
+    category: "IA Générative & Marketing",
+    year: "2026",
+    bg: "linear-gradient(145deg, rgb(120 19 230) 0%, rgb(204 234 255) 100%)",
+    accent: "rgba(0,220,180,0.18)",
+    href: "/projects/project3",
+    tag: "Dashboard",
+    image: "/images/ImagesProjetDetail/Projet3/feonix.png",
+    frame: "desktop",
+  },
+  {
+    title: "VINA.IO",
+    category: "IA Générative",
     year: "2024",
-    bg: "linear-gradient(145deg, #071a10 0%, #0a2818 100%)",
+    bg: "linear-gradient(145deg, rgb(0 161 173) 0%, rgb(74 253 255) 100%)",
     accent: "rgba(0,220,120,0.18)",
+    href: "/projects/project4",
     tag: "Vitrine",
-    image: "/images/projects/vina.png",
+    image: "/images/ImagesProjetDetail/Projet4/vina.png",
     frame: "desktop",
   },
 ];
@@ -211,9 +216,14 @@ export default function Projects() {
   useEffect(() => {
     const el = shooterRef.current;
     if (!el) return;
+    const timers: number[] = [];
     for (let i = 0; i < 3; i++) {
-      setTimeout(() => createShooter(el), i * 2400);
+      timers.push(window.setTimeout(() => createShooter(el), i * 2400));
     }
+    return () => {
+      timers.forEach(clearTimeout);
+      if (el) el.innerHTML = "";
+    };
   }, []);
 
   return (
@@ -266,54 +276,59 @@ export default function Projects() {
           viewport={{ once: true, margin: "-60px" }}
         >
           {projects.map((p, i) => (
-            <motion.article
-              key={p.title}
-              className={styles.card}
-              variants={cardVar}
-              whileHover={{ y: -8, transition: { duration: 0.3, ease: expo } }}
-            >
-              <div className={styles.cardVisual} style={{ background: p.bg }}>
-                {/* Glow accent radial */}
-                <div
-                  className={styles.cardGlow}
-                  style={{
-                    background: `radial-gradient(circle at 50% 110%, ${p.accent} 0%, transparent 65%)`,
-                  }}
-                />
-                {/* Lignes de coin futuristes */}
-                <div className={styles.cornerTL} />
-                <div className={styles.cornerBR} />
-                {/* Numéro */}
-                <span className={styles.cardNum}>0{i + 1}</span>
-                <DeviceFrame
-                  frame={p.frame}
-                  image={p.image}
-                  title={p.title}
-                  accent={p.accent}
-                />
-              </div>
-              <div className={styles.cardInfo}>
-                <div>
-                  <h3 className={styles.cardTitle}>{p.title}</h3>
-                  <p className={styles.cardCat}>{p.category}</p>
+            <Link key={p.title} href={p.href}>
+              <motion.article
+                className={styles.card}
+                variants={cardVar}
+                whileHover={{
+                  y: -8,
+                  transition: { duration: 0.3, ease: expo },
+                }}
+                style={{ cursor: "pointer" }}
+              >
+                <div className={styles.cardVisual} style={{ background: p.bg }}>
+                  {/* Glow accent radial */}
+                  <div
+                    className={styles.cardGlow}
+                    style={{
+                      background: `radial-gradient(circle at 50% 110%, ${p.accent} 0%, transparent 65%)`,
+                    }}
+                  />
+                  {/* Lignes de coin futuristes */}
+                  <div className={styles.cornerTL} />
+                  <div className={styles.cornerBR} />
+                  {/* Numéro */}
+                  <span className={styles.cardNum}>0{i + 1}</span>
+                  <DeviceFrame
+                    frame={p.frame}
+                    image={p.image}
+                    title={p.title}
+                    accent={p.accent}
+                  />
                 </div>
-                <div className={styles.cardMeta}>
-                  <span className={styles.cardYear}>{p.year}</span>
-                  <span className={styles.cardArrow}>
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                    >
-                      <path d="M7 17L17 7M17 7H7M17 7v10" />
-                    </svg>
-                  </span>
+                <div className={styles.cardInfo}>
+                  <div>
+                    <h3 className={styles.cardTitle}>{p.title}</h3>
+                    <p className={styles.cardCat}>{p.category}</p>
+                  </div>
+                  <div className={styles.cardMeta}>
+                    <span className={styles.cardYear}>{p.year}</span>
+                    <span className={styles.cardArrow}>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <path d="M7 17L17 7M17 7H7M17 7v10" />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </motion.article>
+              </motion.article>
+            </Link>
           ))}
         </motion.div>
 

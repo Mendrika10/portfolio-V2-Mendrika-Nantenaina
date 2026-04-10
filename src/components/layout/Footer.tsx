@@ -33,16 +33,22 @@ export default function Footer() {
       <div className={styles.bottomBar}>
         <div className={styles.bottomInner}>
           <Link href="/" className={styles.logo}>
-            &lt;<span>Nante</span> /&gt;
+            <span className={styles.logoBadge}>
+              <img
+                src="/images/logo.png"
+                alt="Jtnova"
+                className={styles.logoImg}
+              />
+            </span>
           </Link>
-          <nav className={styles.nav}>
+          {/* <nav className={styles.nav}>
             {navLinks.map((l) => (
               <Link key={l.href} href={l.href} className={styles.navLink}>
                 {l.label}
               </Link>
             ))}
-          </nav>
-          <p className={styles.copy}>© {year} Nante Mendrika</p>
+          </nav> */}
+          <p className={styles.copy}>© {year} Jtnova | Agence Web & Digital</p>
         </div>
       </div>
     </footer>

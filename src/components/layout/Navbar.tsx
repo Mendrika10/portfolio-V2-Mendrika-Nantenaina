@@ -119,7 +119,7 @@ export default function Navbar() {
         </motion.ul>
 
         {/* Bouton thème */}
-        <motion.div
+        {/* <motion.div
           className={styles.ctaWrap}
           variants={ctaVariant}
           initial="hidden"
@@ -140,7 +140,7 @@ export default function Navbar() {
               {dark ? <PiMoon size={20} /> : <PiSun size={20} />}
             </motion.span>
           </button>
-        </motion.div>
+        </motion.div> */}
 
         {/* Burger mobile */}
         <button

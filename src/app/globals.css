@@ -39,3 +39,6 @@ h6 {
 main {
   padding-top: 0;
 }
+a {
+  text-decoration: none !important;
+}
