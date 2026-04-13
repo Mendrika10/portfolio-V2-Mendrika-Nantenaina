@@ -44,7 +44,7 @@ Disponibilité : Architecture Cloud permettant une utilisation fluide, même lor
     "/images/ImagesProjetDetail/Projet2/11.png",
   ],
   video: {
-    src: "/images/VideoProjetDetail/Projet2/vitascore.mp4",
+    src: "https://ia903105.us.archive.org/11/items/vitascore/vitascore.mp4",
     poster: "/images/ImagesProjetDetail/Projet2/3.png",
   },
   liveUrl: undefined,

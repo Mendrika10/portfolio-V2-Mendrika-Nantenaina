@@ -38,7 +38,7 @@ Vina.io est une plateforme SaaS de pointe spécialisée dans l'automatisation de
     "/images/ImagesProjetDetail/Projet4/7.png",
   ],
   video: {
-    src: "/images/VideoProjetDetail/Projet4/vina.mp4",
+    src: "https://ia903105.us.archive.org/11/items/vitascore/vina.mp4",
     poster: "/images/ImagesProjetDetail/Projet4/1.png",
   },
   liveUrl: undefined,
