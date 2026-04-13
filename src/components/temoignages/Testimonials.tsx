@@ -150,31 +150,6 @@ export default function Testimonials() {
       className={styles.section}
       style={{ marginBottom: "80px" }}
     >
-      {/* Grille de fond */}
-      <div className={styles.bg} aria-hidden="true" />
-      {/* Étoiles */}
-      <div className={styles.starsLayer} aria-hidden="true">
-        {STARS.map((s, i) => (
-          <span
-            key={i}
-            className={`${styles.star}${s.bright ? " " + styles.starBright : ""}`}
-            style={{
-              left: s.left,
-              top: s.top,
-              width: s.size,
-              height: s.size,
-              ["--dur" as string]: s.dur,
-              animationDelay: s.delay,
-            }}
-          />
-        ))}
-      </div>
-      {/* Étoiles filantes */}
-      <div
-        className={styles.shooterContainer}
-        ref={shooterRef}
-        aria-hidden="true"
-      />
       <div className={styles.container}>
         <div className={styles.layout}>
           {/* Colonne gauche */}

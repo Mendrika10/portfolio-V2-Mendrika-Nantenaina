@@ -16,7 +16,6 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   background-color: var(--color-bg) !important;
   background-image: radial-gradient(
     ellipse 80% 50% at 50% -10%,

@@ -63,8 +63,8 @@ export default function CTA() {
 
   return (
     <section id="contact" className={styles.section} aria-label="Contact">
-      <div className={styles.outerBg} aria-hidden="true" />
-      <div className={styles.outerGlow} aria-hidden="true" />
+      {/* <div className={styles.outerBg} aria-hidden="true" />
+      <div className={styles.outerGlow} aria-hidden="true" /> */}
 
       <div className={styles.wrapper}>
         <motion.div
