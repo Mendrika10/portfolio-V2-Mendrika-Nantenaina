@@ -2,29 +2,7 @@
 
 import { useState } from "react";
 import styles from "./Skills.module.css";
-
-const areas = [
-  {
-    title: "Développement Web",
-    icon: "</>",
-    desc: "Je crée des applications web performantes avec Next.js, React, Node.js et TypeScript — du front-end au back-end.",
-  },
-  {
-    title: "UI/UX Design",
-    icon: "◈",
-    desc: "Je conçois des interfaces élégantes et intuitives, from wireframes to pixel-perfect implementations.",
-  },
-  {
-    title: "DevOps & Déploiement",
-    icon: "⚙",
-    desc: "Docker, Vercel, CI/CD — je gère le déploiement et l'optimisation des applications en production.",
-  },
-];
-
-const techStack = [
-  "Docker", "Node.js", "Next.js", "React", "TypeScript",
-  "Figma", "PostgreSQL", "Tailwind CSS", "Git", "HTML/CSS",
-];
+import { areas, techStack } from "@/data/areasOfExpertise";
 
 export default function Skills() {
   const [open, setOpen] = useState(0);
@@ -32,16 +10,23 @@ export default function Skills() {
   return (
     <section id="skills" className={styles.section}>
       <div className={styles.container}>
-
         <div className={styles.topLabel}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--color-accent)" aria-hidden="true">
-            <path d="M13 2L4.5 13.5H11L10 22L20.5 10H14L13 2Z"/>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="var(--color-accent)"
+            aria-hidden="true"
+          >
+            <path d="M13 2L4.5 13.5H11L10 22L20.5 10H14L13 2Z" />
           </svg>
           Spécialité
         </div>
 
         <h2 className={styles.title}>
-          Domaines<br />d&apos;expertise
+          Domaines
+          <br />
+          d&apos;expertise
         </h2>
 
         <div className={styles.layout}>
@@ -61,14 +46,17 @@ export default function Skills() {
                   <span className={styles.itemTitle}>{area.title}</span>
                   <span className={styles.chevron}>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.8"
-                        strokeLinecap="round" strokeLinejoin="round"/>
+                      <path
+                        d="M4 6l4 4 4-4"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </span>
                 </button>
-                {open === i && (
-                  <p className={styles.itemDesc}>{area.desc}</p>
-                )}
+                {open === i && <p className={styles.itemDesc}>{area.desc}</p>}
               </div>
             ))}
           </div>
@@ -79,8 +67,18 @@ export default function Skills() {
               <div className={styles.imageMock}>
                 <div className={styles.imageMockScreen}>
                   <div className={styles.codeLines}>
-                    {["const dev = () => {", '  return "Nante";', "};", "", "// Full Stack"].map((line, i) => (
-                      <span key={i} className={styles.codeLine} style={{ opacity: 1 - i * 0.15 }}>
+                    {[
+                      "const dev = () => {",
+                      '  return "Nante";',
+                      "};",
+                      "",
+                      "// Full Stack",
+                    ].map((line, i) => (
+                      <span
+                        key={i}
+                        className={styles.codeLine}
+                        style={{ opacity: 1 - i * 0.15 }}
+                      >
                         {line}
                       </span>
                     ))}
@@ -94,10 +92,11 @@ export default function Skills() {
         {/* Tech stack tags */}
         <div className={styles.techRow}>
           {techStack.map((t) => (
-            <span key={t} className={styles.techTag}>{t}</span>
+            <span key={t} className={styles.techTag}>
+              {t}
+            </span>
           ))}
         </div>
-
       </div>
     </section>
   );

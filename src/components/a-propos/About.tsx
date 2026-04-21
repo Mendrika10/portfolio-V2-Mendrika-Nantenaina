@@ -1225,7 +1225,7 @@ export default function About() {
             <p className={styles.ctaSub}>
               Parlez-nous de votre projet. Nous vous répondons sous 24h.
             </p>
-            <a href="/#contact" className={styles.btnPrimary}>
+            <a href="/contact" className={styles.btnPrimary}>
               Démarrer un projet
             </a>
           </AnimBlock>

@@ -257,14 +257,14 @@ export default function Projects() {
         >
           <motion.span className={styles.topLabel} variants={labelVar}>
             <span className={styles.labelDot} />
-            Nos réalisations
+            Mes réalisations
           </motion.span>
           <motion.h2 className={styles.title} variants={titleVar}>
             Projets <span className={styles.accent}>sélectionnés</span>
           </motion.h2>
           <motion.p className={styles.subtitle} variants={subtitleVar}>
-            Une sélection de nos réalisations pour des clients de secteurs
-            variés.
+            Voici une sélection de mes projets personnels et collaborations,
+            illustrant mes compétences et réalisations.
           </motion.p>
         </motion.div>
 

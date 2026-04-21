@@ -76,9 +76,11 @@ const marqueeVariant: Variants = {
 };
 
 const socials = [
-  { label: "LINKEDIN", href: "#" },
-  { label: "GITHUB", href: "#" },
-  { label: "BEHANCE", href: "#" },
+  {
+    label: "LINKEDIN",
+    href: "https://www.linkedin.com/in/nantenaina-ramaroharisoa-9684a2261/",
+  },
+  { label: "GITHUB", href: "https://github.com/Mendrika10" },
   { label: "CONTACT", href: "/contact" },
 ];
 
@@ -142,7 +144,7 @@ export default function Hero() {
           >
             <path d="M13 2L4.5 13.5H11L10 22L20.5 10H14L13 2Z" />
           </svg>
-          Jtnova — Agence Web &amp; Digital
+          Salut ! C&apos;est moi Devraj
         </motion.div>
 
         {/* Titre pleine largeur — animation mot par mot */}
@@ -156,13 +158,13 @@ export default function Hero() {
             variants={wordVariant}
             style={{ display: "inline-block" }}
           >
-            Nous
+            Donner
           </motion.span>{" "}
           <motion.span
             variants={wordVariant}
             style={{ display: "inline-block" }}
           >
-            créons
+            vie à
           </motion.span>{" "}
           <motion.span
             variants={wordVariant}
@@ -182,32 +184,32 @@ export default function Hero() {
             className={styles.accent}
             style={{ display: "inline-block" }}
           >
-            digitales
+            qui inspirent
           </motion.span>
           <br />
           <motion.span
             variants={wordVariant}
             style={{ display: "inline-block" }}
           >
-            qui
+            engagent
           </motion.span>{" "}
           <motion.span
             variants={wordVariant}
             style={{ display: "inline-block" }}
           >
-            propulsent
+            et marquent
           </motion.span>{" "}
           <motion.span
             variants={wordVariant}
             style={{ display: "inline-block" }}
           >
-            votre
+            les
           </motion.span>{" "}
           <motion.span
             variants={wordVariant}
             style={{ display: "inline-block" }}
           >
-            business.
+            esprits
           </motion.span>
         </motion.h1>
 
@@ -223,8 +225,8 @@ export default function Hero() {
             >
               {[
                 { num: "3+", label: "Années d'expérience" },
+                { num: "6+", label: "Projets réalisés" },
                 { num: "98%", label: "Clients satisfaits" },
-                { num: "15+", label: "Technologies" },
               ].map((s) => (
                 <motion.div
                   key={s.label}
@@ -288,12 +290,12 @@ export default function Hero() {
             animate="show"
           >
             <p className={styles.desc}>
-              Jtnova accompagne les entreprises dans leur transformation
-              numérique avec des sites web performants, un design moderne et des
-              solutions sur mesure qui génèrent des résultats concrets.
+              Je travaille avec des marques du monde entier pour concevoir des
+              expériences digitales soignées, engageantes et accessibles —
+              orientées résultats et alignées sur vos objectifs.
             </p>
-            <Link href="/services" className={styles.ctaBtn}>
-              Découvrir nos services
+            <Link href="/a-propos" className={styles.ctaBtn}>
+              En savoir plus
             </Link>
           </motion.div>
         </div>

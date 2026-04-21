@@ -84,8 +84,8 @@ const services = [
         <path d="M3 9h18M9 21V9" />
       </svg>
     ),
-    title: "Création de sites web",
-    desc: "Sites vitrine, landing pages et portails web modernes, rapides et responsive, optimisés pour convertir.",
+    title: "Sites & portfolios personnels",
+    desc: "Conception et développement de portfolios et sites personnels pour mettre en valeur vos projets, réalisations et compétences.",
     tag: "Web",
   },
   {
@@ -103,8 +103,8 @@ const services = [
         <path d="M12 19l-7-7 7-7M19 19l-7-7 7-7" />
       </svg>
     ),
-    title: "Applications web",
-    desc: "Développement d'applications web sur mesure avec React, Next.js et Node.js pour automatiser vos processus.",
+    title: "Front-end (React / Next.js)",
+    desc: "Interfaces performantes, accessibles et réactives avec React et Next.js — optimisation SEO et meilleures pratiques UX.",
     tag: "Dev",
   },
   {
@@ -124,27 +124,8 @@ const services = [
       </svg>
     ),
     title: "Design UI/UX",
-    desc: "Conception d'interfaces intuitives et esthétiques sous Figma, centrées sur l'expérience utilisateur.",
+    desc: "Design d'interfaces et prototypes (Figma) adaptés à votre identité, centrés sur l'expérience utilisateur.",
     tag: "Design",
-  },
-  {
-    icon: (
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M6 2l.01 6L10 12l-3.99 4.01L6 22h12v-5.99L14 12l4-3.99V2H6z" />
-      </svg>
-    ),
-    title: "E-commerce",
-    desc: "Boutiques en ligne performantes avec gestion produits, paiements sécurisés et tableaux de bord analytiques.",
-    tag: "Commerce",
   },
   {
     icon: (
@@ -161,9 +142,9 @@ const services = [
         <path d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: "Optimisation & SEO",
-    desc: "Audit de performance, Core Web Vitals, référencement naturel pour améliorer votre visibilité en ligne.",
-    tag: "SEO",
+    title: "Performance & optimisation",
+    desc: "Amélioration des Core Web Vitals, optimisation des temps de chargement et bonnes pratiques pour de meilleures performances.",
+    tag: "Perf",
   },
   {
     icon: (
@@ -180,8 +161,27 @@ const services = [
         <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
       </svg>
     ),
-    title: "Conseil & Accompagnement",
-    desc: "Stratégie digitale, choix technologiques et accompagnement de A à Z pour concrétiser votre vision.",
+    title: "Projets & Open‑Source",
+    desc: "Présentation de projets personnels, contributions open-source et démonstrations techniques (cas d'étude et code à l'appui).",
+    tag: "Projets",
+  },
+  {
+    icon: (
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M6 2l.01 6L10 12l-3.99 4.01L6 22h12v-5.99L14 12l4-3.99V2H6z" />
+      </svg>
+    ),
+    title: "Conseils & Mentorat",
+    desc: "Revue de code, conseils techniques et accompagnement pour lancer ou améliorer vos projets personnels.",
     tag: "Conseil",
   },
 ];
@@ -255,17 +255,17 @@ export default function Services() {
         >
           <motion.div className={styles.topLabel} variants={labelVar}>
             <span className={styles.dot} />
-            Nos services
+            Mes services
           </motion.div>
           <motion.h2 className={styles.title} variants={titleVar}>
-            Ce que nous
+            Ce que je
             <br />
-            <span className={styles.accent}>construisons</span> pour vous
+            <span className={styles.accent}>construis</span> pour vous
           </motion.h2>
           <motion.p className={styles.subtitle} variants={subtitleVar}>
-            De la conception à la mise en production, Jtnova couvre
-            l&apos;ensemble du spectre digital pour transformer vos idées en
-            produits performants.
+            De la conception à la mise en production, je couvre l&apos;ensemble
+            du spectre digital pour transformer vos idées en produits
+            performants.
           </motion.p>
         </motion.div>
 

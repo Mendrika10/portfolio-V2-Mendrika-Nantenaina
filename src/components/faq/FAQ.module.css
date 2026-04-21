@@ -162,7 +162,7 @@
 }
 
 .qText {
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: rgba(200, 220, 240, 0.75);
   line-height: 1.45;
@@ -285,9 +285,9 @@
   --borderAngle: 0deg;
   position: relative;
   width: 100%;
-  max-width: 520px;
+  /* max-width: 520px; */
   border-radius: 26px;
-  padding: clamp(44px, 6vw, 64px) clamp(32px, 4vw, 52px);
+  /* padding: clamp(44px, 6vw, 64px) clamp(32px, 4vw, 52px); */
   border: 1.5px solid transparent;
   background-image:
     linear-gradient(rgba(6, 12, 28, 0.98), rgba(5, 10, 22, 0.99)),
@@ -438,7 +438,6 @@
 .logoImg {
   display: block;
   width: 100%;
-  max-width: 290px;
   height: auto;
   object-fit: contain;
 }

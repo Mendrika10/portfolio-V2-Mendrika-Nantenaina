@@ -25,45 +25,45 @@ const headerVar: Variants = {
 
 const testimonials = [
   {
-    name: "Sophie Martin",
-    role: "CEO, TechStart",
-    avatar: "SM",
-    text: "Jtnova a transform\u00e9 notre pr\u00e9sence en ligne. Le site livr\u00e9 est non seulement magnifique mais aussi extr\u00eamement performant. Notre taux de conversion a augment\u00e9 de 40% d\u00e8s le premier mois. Une \u00e9quipe professionnelle, \u00e0 l\u2019\u00e9coute et qui sait comment transformer une vision en r\u00e9alit\u00e9 digitale.",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Karim Benali",
-    role: "Directeur Marketing, Nexora",
-    avatar: "KB",
-    text: "Une \u00e9quipe \u00e0 l\u2019\u00e9coute, r\u00e9active, et qui comprend vraiment les enjeux business. Le r\u00e9sultat final a d\u00e9pass\u00e9 toutes nos attentes. Je recommande sans h\u00e9sitation \u00e0 toute entreprise cherchant un partenaire digital de confiance.",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "L\u00e9a Fontaine",
-    role: "Fondatrice, Moda Shop",
-    avatar: "LF",
-    text: "Notre boutique e-commerce a \u00e9t\u00e9 d\u00e9velopp\u00e9e en un temps record avec une qualit\u00e9 impeccable. Le suivi apr\u00e8s livraison est \u00e9galement top. L\u2019interface est intuitive et nos clients adorent l\u2019exp\u00e9rience d\u2019achat.",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Thomas Roux",
-    role: "CTO, DataFlow SAS",
-    avatar: "TR",
-    text: "Collaboration fluide du d\u00e9but \u00e0 la fin. Jtnova ma\u00eetrise les technologies modernes et sait les appliquer intelligemment pour livrer des produits robustes et scalables. Une vraie expertise technique.",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Amira Diallo",
-    role: "Responsable Digital, GreenBio",
+    name: "Alexandre Dubois",
+    role: "Fondateur, Startly",
     avatar: "AD",
-    text: "Le redesign de notre site a redonn\u00e9 vie \u00e0 notre marque. L\u2019\u00e9quipe a su capturer notre identit\u00e9 et la traduire en une exp\u00e9rience digitale coh\u00e9rente et engageante. Les r\u00e9sultats ont \u00e9t\u00e9 imm\u00e9diats.",
+    text: "J'ai confié la refonte de mon site portfolio à Mendrika. Le rendu est moderne, rapide et fidèle à l'identité que nous avions imaginée. Les retours clients ont été immédiats.",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Marc Leclerc",
-    role: "G\u00e9rant, Studio Arc",
-    avatar: "ML",
-    text: "Interface \u00e9pur\u00e9e, animations soign\u00e9es, performances au top. Exactement ce que nous cherchions. Jtnova est maintenant notre partenaire digital de r\u00e9f\u00e9rence pour tous nos projets futurs.",
+    name: "Sofia Tremblay",
+    role: "Product Designer",
+    avatar: "ST",
+    text: "Mendrika a traduit mes maquettes Figma en composants réutilisables et accessibles. Le travail est propre, documenté et la livraison respectait les délais.",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    name: "Rivo Andrian",
+    role: "Indépendant",
+    avatar: "RA",
+    text: "Collaboration fluide et communication claire. Le site m'a aidé à gagner en crédibilité et à obtenir plusieurs nouveaux projets.",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    name: "Hana R.",
+    role: "Recruteur Tech",
+    avatar: "HR",
+    text: "Le portfolio de Mendrika reflète un excellent niveau technique et un sens du détail qui font la différence lors des recrutements.",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    name: "Jean-Luc",
+    role: "Collaborateur",
+    avatar: "JL",
+    text: "Code lisible, architecture claire et bonnes pratiques respectées — travailler avec Mendrika a été un vrai plaisir.",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    name: "Client (anonyme)",
+    role: "Start-up",
+    avatar: "CA",
+    text: "Rapidité, professionnalisme et excellent suivi après livraison. Je recommande pour tout projet de portfolio ou site personnel.",
     linkedin: "https://linkedin.com",
   },
 ];
@@ -173,12 +173,13 @@ export default function Testimonials() {
               {"Témoignages"}
             </div>
             <h2 className={styles.title}>
-              Ce que disent nos&nbsp;
-              <span className={styles.accent}>clients</span>
+              Retours clients
+              <br />
+              <span className={styles.accent}>authentiques</span>
             </h2>
             <p className={styles.subtitle}>
-              La satisfaction de nos clients est notre meilleure carte de
-              visite. Voici ce qu&apos;ils pensent de notre collaboration.
+              Témoignages réels sur les projets menés, l'accompagnement fourni
+              et les résultats obtenus.
             </p>
 
             <div className={styles.dots}>

@@ -8,6 +8,8 @@ import {
   type Variants,
 } from "framer-motion";
 import styles from "./FAQ.module.css";
+import { areas } from "@/data/areasOfExpertise";
+import { CryptoRain } from "./CryptoRain";
 
 const expo = cubicBezier(0.16, 1, 0.3, 1);
 
@@ -45,7 +47,6 @@ const itemVar: Variants = {
     transition: { duration: 0.45, ease: expo },
   },
 };
-
 function IconCode() {
   return (
     <svg
@@ -150,37 +151,42 @@ function IconTag() {
   );
 }
 
+const areaFaqs = areas.map((area) => ({
+  icon: area.icon,
+  q: `Que comprend mon expertise en ${area.title} ?`,
+  a: area.desc,
+}));
+
 const faqs = [
-  {
-    icon: <IconCode />,
-    q: "Quels types de projets réalisez-vous ?",
-    a: "Nous concevons et développons des sites vitrines, boutiques e-commerce, plateformes SaaS, dashboards analytics et applications web sur mesure. Chaque projet est adapté aux besoins spécifiques de notre client.",
-  },
-  {
-    icon: <IconClock />,
-    q: "Combien de temps faut-il pour livrer un projet ?",
-    a: "Un site vitrine simple est livré en 2 à 4 semaines. Un projet plus complexe (e-commerce, SaaS) prend généralement 4 à 10 semaines selon le périmètre fonctionnel défini ensemble lors du brief.",
-  },
-  {
-    icon: <IconStack />,
-    q: "Quelles technologies utilisez-vous ?",
-    a: "Nous travaillons principalement avec React, Next.js, TypeScript, Node.js et Tailwind CSS. Pour les bases de données nous utilisons PostgreSQL ou MongoDB selon les besoins, et nous déployons sur Vercel ou des serveurs dédiés.",
-  },
-  {
-    icon: <IconShield />,
-    q: "Proposez-vous un suivi après la livraison ?",
-    a: "Oui, nous proposons des contrats de maintenance mensuelle incluant les mises à jour, la surveillance des performances, les correctifs et les évolutions mineures. Nous restons accessibles après chaque livraison.",
-  },
-  {
-    icon: <IconFlow />,
-    q: "Comment se déroule le processus de travail ?",
-    a: "Notre processus comprend 4 étapes : un brief de découverte, une phase de design/maquettes validées par vous, le développement avec des points réguliers, puis la livraison et le déploiement. Vous êtes impliqué à chaque étape.",
-  },
-  {
-    icon: <IconTag />,
-    q: "Quel est le tarif pour un projet ?",
-    a: "Les tarifs varient selon la complexité du projet. Un site vitrine démarre à partir de 800€. Nous établissons un devis gratuit et personnalisé après un premier échange pour comprendre vos besoins précis.",
-  },
+  ...areaFaqs,
+  // {
+  //   icon: <IconClock />,
+  //   q: "Combien de temps faut-il pour livrer un projet ?",
+  //   a: "Un site vitrine simple est livré en 2 à 4 semaines. Un projet plus complexe (e-commerce, SaaS) prend généralement 4 à 10 semaines selon le périmètre défini ensemble.",
+  // },
+  // {
+  //   icon: <IconShield />,
+  //   q: "Proposez-vous un suivi après la livraison ?",
+  //   a: "Oui, je propose des contrats de maintenance et un support post‑livraison pour assurer stabilité et évolutions.",
+  // },
+  // {
+  //   icon: <IconFlow />,
+  //   q: "Comment se déroule le processus de travail ?",
+  //   a: "Découverte, design, développement et livraison — je vous implique à chaque étape avec des points réguliers.",
+  // },
+  // {
+  //   icon: <IconTag />,
+  //   q: "Quel est le tarif pour un projet ?",
+  //   a: "Les tarifs varient selon la complexité. Un site vitrine démarre à partir de 800€. Je fournis un devis sur-mesure après échange.",
+  // },
+];
+
+const carouselImages = [
+  "/images/projects/feonix.png",
+  "/images/projects/jtnova.png",
+  "/images/projects/julia.png",
+  "/images/projects/vina.png",
+  "/images/projects/vitascore.png",
 ];
 
 export default function FAQ() {
@@ -282,7 +288,7 @@ export default function FAQ() {
           </motion.div>
         </motion.div>
 
-        {/* ── Right column — logo ── */}
+        {/* ── Right column — image carousel ── */}
         <motion.div
           className={styles.right}
           variants={logoVar}
@@ -290,64 +296,7 @@ export default function FAQ() {
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
         >
-          <div className={styles.logoCardOuter}>
-            {/* clip container for scan + glow */}
-            <div className={styles.cardClip} aria-hidden="true">
-              <div className={styles.logoGlow} />
-              <div className={styles.scanLine} />
-            </div>
-
-            {/* 4 corner decorations */}
-            <div className={styles.cornerTL} aria-hidden="true" />
-            <div className={styles.cornerTR} aria-hidden="true" />
-            <div className={styles.cornerBL} aria-hidden="true" />
-            <div className={styles.cornerBR} aria-hidden="true" />
-
-            {/* Status label */}
-            <div className={styles.cardLabel}>
-              <span className={styles.cardLabelDot} aria-hidden="true" />
-              {"JTNOVA · STUDIO"}
-            </div>
-
-            {/* Floating logo */}
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className={styles.logoImgWrap}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/logo.png"
-                  alt="Jtnova logo"
-                  className={styles.logoImg}
-                />
-              </div>
-            </motion.div>
-
-            <p className={styles.logoTagline}>
-              {"Développement web & solutions digitales"}
-            </p>
-
-            <div className={styles.cardDivider} aria-hidden="true" />
-
-            {/* Stats */}
-            <div className={styles.stats}>
-              <div className={styles.stat}>
-                <span className={styles.statNum}>50+</span>
-                <span className={styles.statLabel}>{"Projets"}</span>
-              </div>
-              <div className={styles.statSep} aria-hidden="true" />
-              <div className={styles.stat}>
-                <span className={styles.statNum}>5+</span>
-                <span className={styles.statLabel}>{"Ans d'exp."}</span>
-              </div>
-              <div className={styles.statSep} aria-hidden="true" />
-              <div className={styles.stat}>
-                <span className={styles.statNum}>100%</span>
-                <span className={styles.statLabel}>{"Satisfaction"}</span>
-              </div>
-            </div>
-          </div>
+          <CryptoRain />
         </motion.div>
       </div>
     </section>
