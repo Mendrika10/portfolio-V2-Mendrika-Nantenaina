@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, cubicBezier, type Variants } from "framer-motion";
-import { PiSun, PiMoon } from "react-icons/pi";
 import styles from "./Navbar.module.css";
 
 const expo = cubicBezier(0.16, 1, 0.3, 1);
@@ -89,13 +88,7 @@ export default function Navbar() {
           transition={{ duration: 0.6, ease: expo, delay: 0.2 }}
         >
           <Link href="/" className={styles.logo}>
-            <span className={styles.logoBadge}>
-              <img
-                src="/images/logo.png"
-                alt="Jtnova"
-                className={styles.logoImg}
-              />
-            </span>
+            <span className={styles.logoBadge}></span>
           </Link>
         </motion.div>
 
